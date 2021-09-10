@@ -80,6 +80,11 @@ android {
     }
   }
 
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
   def v8Release = "x5-lite"
   def v8Debug = "official-release"
   if (V8_TAG == "latest") {
