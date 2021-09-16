@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: './mavencentral.gradle'
+apply plugin: 'tme-module-upload'
 
 ext {
   CMAKE_PATH = "$projectDir.absolutePath/src/main/jni/CMakeLists.txt"
@@ -12,11 +13,15 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    maven {
+      url "https://mirrors.tencent.com/repository/maven/karaoke-android/"
+    }
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:4.0.1'
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
+    classpath 'com.tme.plugin.gradle:tme_module_upload:1.0.6-release' // 以 sdk.properties 中的版本为准
   }
 }
 
